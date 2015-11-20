@@ -1,5 +1,8 @@
-<# this powershell script for use with Office 365 for demosntration purpose only developed by lalit mohan on 20th Nov 2015 #>
-<# this script provides the number of users that have not logged-in to office 365 for last 30 days, by domains, if more then one domain exist in the tenent #>
+<# this powershell script is for use with Office 365 for demosntration purpose only, developed by lalit mohan 
+(email contact: lalitm@micorosft.com OR lalitmohan14@outlook.com) on 20th Nov 2015 #>
+
+<# this script provides the number of users that have not logged-in to office 365 for last 30 days, by domains, 
+if more then one domain exist in the tenent #>
 
 <# get credential #>
 $cred = get-credential
@@ -23,13 +26,13 @@ for ($ix=0;$ix -lt 2;$ix++)
 } 
 
 <# collect and prepare main data #>
-
 Get-mailbox -resultsize unlimited|Foreach-Object{
 
     $str1 = $_
     $str1.PrimarySmtpAddress -match '@(.*)$'| out-null
     $str2 = Get-MailboxStatistics $str1.DisplayName
    
+   <# determine status #>
 if ($str2.lastlogontime) {
 if ( ((Get-Date) - ($str2.lastlogontime)).days -gt $days ) {
  $str3 = "inactive"
