@@ -1,4 +1,4 @@
-<# this powershell script is for use with Office 365 for demosntration purpose only, developed by lalit mohan 
+<# this powershell script is for use with Office 365 for demonstration purpose only, developed by lalit mohan 
 (email contact: lalitm@micorosft.com OR lalitmohan14@outlook.com) on 20th Nov 2015 #>
 
 <# this script provides the number of users that have not logged-in to office 365 for last 30 days, by domains, 
