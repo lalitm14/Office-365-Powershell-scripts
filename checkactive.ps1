@@ -1,3 +1,6 @@
+<# this powershell script for use with Office 365 for demosntration purpose only developed by lalit mohan on 20th Nov 2015 #>
+<# this script provides the number of users that have not logged-in to office 365 for last 30 days, by domains, if more then one domain exist in the tenent #>
+
 <# get credential #>
 $cred = get-credential
 Import-Module MSOnline
